@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+/* Page wrapper */
+.auth-page {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #1c2430; /* Dark navy background */
+  font-family: "Shadows Into Light", cursive;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  padding-bottom: 60px; /* leave space for footer */
+}
+
+/* Heading outside box */
+.auth-heading {
+  background-color: #f9f1d7; /* soft cream */
+  padding: 15px 40px;
+  border-radius: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #b37642; /* warm sand-brown text */
+  margin-bottom: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Auth box */
+.auth-box {
+  background-color: #1c1c1c;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(23, 24, 27, 0.626);
+  width: 100%;
+  max-width: 400px;
+  color: #fff;
+  animation: fadeInUp 0.5s ease;
+  font-family: "Shadows Into Light", cursive;
+}
+
+/* Heading inside box */
+.auth-box h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 100;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Inputs */
+.auth-box input {
+  width: 90%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  font-family: "Shadows Into Light", cursive;
+}
+
+.auth-box input::placeholder {
+  color: #999;
+  font-size: 18px;
+}
+
+.auth-box input:hover {
+  background-color: #696d76c0;
+}
+
+.auth-box input:focus {
+  background-color: #171c25;
+  border: 1px solid #87c0f984;
+  outline: none;
+}
+
+/* Buttons */
+.auth-box button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background-color: hsl(146, 80%, 36%);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Shadows Into Light", cursive;
+}
+
+.auth-box button:hover {
+  background-color: hsl(137, 86%, 23%);
+}
+
+/* Messages */
+.auth-box p {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #ccc;
+  text-align: center;
+}
+
+.auth-box .success-message {
+  color: #4caf50;
+}
+.auth-box .error-message {
+  color: rgba(255, 0, 0, 0.842);
+}
+

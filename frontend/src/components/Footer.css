@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+.socials {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 5;
+  font-family: "Shadows Into Light", cursive;
+}
+
+.socials svg {
+  transition: transform 0.3s ease;
+}
+.socials svg:hover {
+  transform: scale(1.2);
+}
+
+.madeWithLove {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.9;
+  z-index: 5;
+  font-family: "Shadows Into Light", cursive;
+}

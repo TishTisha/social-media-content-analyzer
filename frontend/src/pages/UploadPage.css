@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+body{
+  font-family: "Shadows Into Light", cursive;
+}
+.page-container {
+  font-family: 'Shadows Into Light', cursive;
+  background-color: #18212d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+}
+
+.heading-box {
+  background-color: #faedcd;
+  padding: 16px 32px;
+  border-radius: 15px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Shadows Into Light', cursive;
+}
+.heading-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.heading-box h1 {
+  margin: 0;
+  color: #d4a373;
+  font-size: 28px;
+}
+
+.upload-box {
+  background-color: #faedcd;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 650px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 22px;
+}
+
+.upload-box input[type="file"] {
+  margin-bottom: 16px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+}
+
+.file-name {
+  margin-top: 12px;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Button Base */
+.upload-box button {
+  padding: 14px 28px;
+  font-size: 22px;
+  font-family: 'Shadows Into Light', cursive;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  margin: 8px; /* 👈 gives spacing between delete and upload */
+}
+
+/* Upload Button */
+.upload-box button:not(.delete-btn) {
+  background: #d4a373;
+  color: #fff;
+}
+.upload-box button:not(.delete-btn):hover {
+  background: #b97d4b;
+  transform: scale(1.05);
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #e76f51;
+  color: white;
+}
+.delete-btn:hover {
+  background: #d62828;
+  transform: scale(1.05);
+}
+
+/* Output text */
+.output-box {
+  margin-top: 32px;
+  padding: 24px;
+  background-color: #fff;
+  background-color: #faedcd;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 800px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 20px;
+}
+.output-box h2 {
+  margin-bottom: 16px;
+  color: #d4a373;
+  font-size: 22px;
+}
+.output-box pre {
+  white-space: pre-wrap;
+  font-size: 20px;
+  line-height: 1.6;
+}
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-text-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #e76f51;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.delete-text-btn:hover {
+  color: #d62828;
+  transform: scale(1.2);
+}
+.metadata-box {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #444;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+.metadata-box p {
+  margin: 0.3rem 0;
+}
+
+.page-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.heading-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upload-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.choose-btn,
+.upload-btn,
+.delete-btn,
+.delete-text-btn {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.file-card {
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.result-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.metadata {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.logout-btn{
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #d4a373;
+  color: #fff;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+}

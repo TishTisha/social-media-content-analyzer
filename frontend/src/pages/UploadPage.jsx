@@ -5,13 +5,16 @@ import axios from "axios";
 import "./UploadPage.css";
 import Footer from "../components/Footer";
 
+// ✅ Set backend URL
+const BACKEND_URL = "https://social-media-content-analyzer-imw6.onrender.com";
+
 export default function UploadPage() {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
   const navigate = useNavigate();
 
-  // ✅ Load saved results from localStorage on mount
+  // Load saved results from localStorage on mount
   useEffect(() => {
     const savedResults = localStorage.getItem("results");
     if (savedResults) {
@@ -19,7 +22,7 @@ export default function UploadPage() {
     }
   }, []);
 
-  // ✅ Save results to localStorage whenever they change
+  // Save results to localStorage whenever they change
   useEffect(() => {
     if (results.length > 0) {
       localStorage.setItem("results", JSON.stringify(results));
@@ -28,7 +31,7 @@ export default function UploadPage() {
     }
   }, [results]);
 
-  // ✅ Handle logout
+  // Handle logout
   const handleLogout = () => {
     localStorage.removeItem("token"); // remove JWT
     localStorage.removeItem("results"); // clear extracted text if needed
@@ -66,8 +69,13 @@ export default function UploadPage() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5007/upload", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
+      const token = localStorage.getItem("token"); // ✅ Get token from storage
+
+      const res = await axios.post(`${BACKEND_URL}/upload`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: token ? `Bearer ${token}` : undefined, // send JWT if exists
+        },
         onUploadProgress: (progressEvent) => {
           const percent = Math.round(
             (progressEvent.loaded * 100) / progressEvent.total
@@ -88,12 +96,12 @@ export default function UploadPage() {
 
   return (
     <div className="page-container">
-
-
-        <button className="logout-btn" onClick={handleLogout}>
-          🚪 Logout
-        </button>
-        <div className="heading-box"> <h1>📄 Upload & Extract</h1> </div>
+      <button className="logout-btn" onClick={handleLogout}>
+        🚪 Logout
+      </button>
+      <div className="heading-box">
+        <h1>📄 Upload & Extract</h1>
+      </div>
 
       <div className="upload-box">
         <input

@@ -4,6 +4,9 @@ import axios from "axios";
 import "./Auth.css";
 import Footer from "../components/Footer";
 
+// ✅ Set backend URL
+const BACKEND_URL = "https://social-media-content-analyzer-imw6.onrender.com";
+
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,10 +16,12 @@ export default function Signup() {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5007/auth/signup", {
+      // ✅ Use deployed backend URL
+      const res = await axios.post(`${BACKEND_URL}/auth/signup`, {
         email,
         password,
       });
+
       localStorage.setItem("token", res.data.token);
       setMessage("✅ Signup successful! Redirecting...");
       setTimeout(() => navigate("/upload"), 1000);
@@ -51,7 +56,7 @@ export default function Signup() {
           <button type="submit">Sign Up</button>
         </form>
 
-        {/* Message always visible if set */}
+        {/* Message */}
         {message && (
           <p
             className={

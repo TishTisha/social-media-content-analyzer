@@ -12,6 +12,7 @@ function App() {
         <Route path="/auth/signup" element={<SignupPage />} />
         <Route path="/auth/login" element={<LoginPage />} />
         <Route path="/upload" element={<UploadPage />} />
+        <Route path="*" element={<h2>404 - Page Not Found</h2>} />
       </Routes>
     </Router>
   );

@@ -5,6 +5,9 @@ import "./Auth.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Footer from "../components/Footer";
 
+// ✅ Set backend URL
+const BACKEND_URL = "https://social-media-content-analyzer-imw6.onrender.com";
+
 export default function LoginPage() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -20,7 +23,9 @@ export default function LoginPage() {
     setLoading(true);
     setMessage("");
     try {
-      const res = await axios.post("http://localhost:5007/auth/login", formData);
+      // ✅ Use deployed backend URL
+      const res = await axios.post(`${BACKEND_URL}/auth/login`, formData);
+
       localStorage.setItem("token", res.data.token); // store JWT
       setMessage("✅ Login successful!");
       setTimeout(() => navigate("/upload"), 1000);
